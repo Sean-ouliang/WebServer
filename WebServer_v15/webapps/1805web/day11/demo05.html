@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function myfn(){
+		/* 通过event得到事件源  存在兼容性问题
+		有的浏览器支持target，有的浏览器支持srcElement
+		通过以下写法可以保证任何浏览器都能正常执行*/
+		var obj = event.target || event.srcElement;
+		alert("标签名称："+obj.nodeName);
+	}
+</script>
+</head>
+<body>
+	<h1 onclick="myfn();">啦啦啦</h1>
+	<input type="button" value="点我试试" onclick="myfn();">
+</body>
+</html>

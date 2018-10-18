@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function downfn(){
+		console.log("键盘按下"+String.fromCharCode(event.keyCode));
+	}
+	function upfn(){
+		console.log("松开");
+	}
+	onload = function(){
+		/* 动态绑定事件 */
+		/* mybtn.onclick = function(){
+			alert("动态绑定成功！");
+		} */
+		mybtn.onclick = myfn;
+	}
+	function myfn(){
+		alert("动态绑定成功！");
+	}
+</script>
+</head>
+<body>
+	<input type="text" onkeydown="downfn();" onkeyup="upfn();">
+	<input id="mybtn" type="button" value="点我试试">
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var arr = ["a","d","j","k","o"];
+	function f(){
+		var name = document.getElementById("myinput").value;
+		var d = document.getElementById("big");
+		for(var i=0;i<arr.length;i++){
+			if(arr[i]==name){
+				d.innerHTML = "<img src='../imgs/"+name+".jpg'>";
+				return;//结束方法
+			}
+		}
+		d.innerHTML = "<h1>图片不存在</h1>";
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="myinput">
+	<input type="button" value="加载图片" onclick="f();">
+	<div id="big"></div>
+</body>
+</html>

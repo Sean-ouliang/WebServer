@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/* 创建正则对象   第一种*/
+	var reg = /^a/i;//第一个/后面写表达式，第二个/后面写模式
+	//模式：i 忽略大小写  g 全局查找
+	reg = /m$/;//以m结尾
+	reg = /\d{2}/;//包含任意连续两位数字
+	reg = /^m\d{3,5}c$/;//m开头c结尾中间有3-5任意数字
+	reg = /^\w{6,10}$/;//6-10位任意数字字母下划线
+	/* 第二种 */
+	var reg2 = new RegExp("^a","i");//参数一表达式，参数二模式（可以省略）
+	//此种写法  反斜杠需要转义
+	reg2 = new RegExp("^\\w{6.10}$");
+	/* 正则相关函数 */
+	var str = "You can you up no can no b b";
+	//写查找no的正则
+	reg = /no/g;
+	//alert(reg.exec(str));
+	//alert(reg.exec(str));
+	//alert(reg.exec(str));//找不到则返回null
+	//效验文本
+	//reg = /^you/i;
+	//alert(reg.test(str));
+	/* 字符串和正则相关的函数 */
+	//3.match 从字符串中查找符合规则的内容，
+	//作用和exec类似，比exec好用，match可以直接得到所有
+	//匹配的结果 把所有结果放在数组中
+	//reg = /no/g;
+	//alert(str.match(reg));
+	//4.查找并替换
+	reg = /no/g;
+	alert(str.replace(reg,"bu"));
+</script>
+</head>
+<body>
+	
+</body>
+</html>

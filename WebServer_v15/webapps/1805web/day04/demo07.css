@@ -1,0 +1,24 @@
+
+.d1{
+	width: 1000px;
+	height: 376px;
+	border: 1px solid red;
+}
+.d2{
+	width: 611px;
+	height: 376px;
+	border: 1px solid red;
+}
+.d3{
+	width: 245px;
+	height: 232px;
+	border: 1px solid red;
+	margin-top: 68px;
+	margin-left: 36px;
+	padding: 5px;
+	float: left;
+}
+.i1{
+	width: 318px;
+	height: 319px;
+}

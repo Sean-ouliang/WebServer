@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function f1(){
+		var input1 = document.getElementById("input1").value;
+		var input2 = document.getElementById("input2").value;
+		var input3 = document.getElementById("input3").value;
+		var input4 = document.getElementById("input4").value;
+		var d = document.getElementById("d1");
+		d.style.width = input1+"px";
+		d.style.height = input2+"px";
+		d.style.marginTop = input3+"px";
+		d.style.marginLeft = input4+"px";
+	}
+	function f2(){
+		var d = document.getElementById("d1");
+		d.style.color = "green";
+	}
+	function f3(){
+		var d = document.getElementById("d1");
+		d.style.backgroundColor = "red";
+	}
+	function move(){
+		var d = document.getElementById("d1");
+		//得到原来的margin的值
+		oldLeft = d.style.marginLeft;
+		//如果没有赋值过margin则取出的是空字符串
+		if(oldLeft==""){
+			oldLeft=0;
+		}
+		//把0或字符串（30px）转换成数值
+		oldLeft = parseInt(oldLeft);
+		//移动10个像素
+		oldLeft+=10;
+		//把+10后的左外边距再放回去
+		d.style.marginLeft=oldLeft+"px";
+	}
+	var i=0;
+	//开启定时器 返回值为定时器的唯一标识
+	var timeId = setInterval(function(){
+		move();
+		if(i==5){
+			//让定时器停止
+			clearInterval(timeId);
+		}
+		console.log(i++);
+	},1000);
+	
+	setTimeout(function(){
+		f2();
+		f3();
+	},1000);
+</script>
+</head>
+<body>
+	<input type="text" placeholder="元素宽度" id="input1">
+	<input type="text" placeholder="元素高度" id="input2">
+	<input type="text" placeholder="距顶部距离" id="input3">
+	<input type="text" placeholder="距左侧距离" id="input4">
+	<input type="button" value="改变样式" onclick="f1();">
+	<input type="button" value="字体绿色" onclick="f2();">
+	<input type="button" value="背景红色" onclick="f3();">
+	<input type="button" value="移动" onclick="move();">
+	<div id="d1">大周一 不许犯困!!!</div>
+</body>
+</html>

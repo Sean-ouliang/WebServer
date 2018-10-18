@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.4.2.min.js"></script>
+<script>
+	$(function(){
+		$("input[value='添加']").click(function(){
+			var $tr = $("<tr></tr>");
+			var $inputs = $("input[type='text']");
+			for(var i=0;i<$inputs.length;i++){
+				var text = $inputs.val();
+				var $td = $("<td>"+text+"</td>");
+				$tr.append($td);
+			}
+			console.log($tr);
+			console.log("111");
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="text" value="姓名">
+	<input type="text" value="年龄">
+	<input type="text" value="工资">
+	<input type="button" value="添加">
+	<hr>
+	<table border="1" cellspacing="0">
+		<tr>
+			<th>姓名</th>
+			<th>年龄</th>
+			<th>工资</th>
+			<th>操作</th>
+		</tr>
+	</table>
+</body>
+</html>

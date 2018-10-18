@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.red{
+		color: red;
+	}
+	.blue{
+		color: blue;
+	}
+</style>
+<script type="text/javascript">
+	function f(){
+		var name = document.getElementById("name").value;
+		var password = document.getElementById("password").value;
+		var span1 = document.getElementById("span1");
+		var span2 = document.getElementById("span2");
+		var reg1 = /^\w{6,10}$/;
+		var reg2 = /^\w{10,16}$/;
+		var nameflag = reg1.test(name);
+		var passwordflag = reg2.test(password);
+		//判断用户名是否合法
+		span1.className = nameflag?"blue":"red";
+		/* if(nameflag){
+			span1.className = "blue";
+		}else{
+			span1.className = "red";
+		} */
+		//判断密码是否合法
+		if(passwordflag){
+			span2.className = "blue";
+		}else{
+			span2.className = "red";
+		}
+		
+		
+		/* if(nameflag && passwordflag){
+			span1.className="blue";
+			span2.className="blue";
+		}else if(nameflag && !passwordflag){
+			span1.className="blue";
+			span2.className="red";
+		}else if(!nameflag && passwordflag){
+			span1.className="red";
+			span2.className="blue";
+		}else{
+			span1.className="red";
+			span2.className="red";
+		} */
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="name" placeholder="用户名" onblur="f();">
+	<span id="span1">6-10位数字、字母、下划线</span><br>
+	<input type="text" id="password" placeholder="密码" onblur="f();">
+	<span id="span2">10-16位数字、字母、下划线</span><br>
+	<input type="button" value="校验" onclick="f();">
+</body>
+</html>

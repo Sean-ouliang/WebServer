@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body {
+		font-family: 微软雅黑, 文泉驿正黑, 黑体, serif;
+		font-size: 12px;
+		color: rgb(102, 102, 102);
+		background-color: rgb(245,245,245);
+		margin: 0px;
+	}
+	article{
+		width: 100%;
+		height: 560px;
+		background-image: url("../images/regist.png");
+		color: #fff;
+	}
+	#form{
+		border: 1px solid red;
+		width: 264px;
+		float: right;
+		margin: 120px 111px 0 0;
+		background-color: rgba(0,0,0,0.3);
+		text-align: center;
+	}
+	a,h2{
+		display: inline;
+	}
+	a{
+		text-decoration: none;
+	}
+</style>
+</head>
+<body>
+<article>
+	<div id="form">
+		<h2>登陆学子商城</h2>
+		<a href="#">新用户注册</a>
+		<hr>
+		<form action="#" method="get">
+			<input type="text" maxLength="10" name="username" placeholder="请输入您的用户名">
+			<img src="../images/login/yhm.png">
+			<p>用户名不能为空</p>
+			<input type="text" maxLength="16" name="password" placeholder="请输入您的密码">
+			<img src="../images/login/mm.png">
+			<p>密码不能 为空</p>
+			<input type="checkbox" name="dl" value="dl">自动登录
+			<span>忘记密码</span>
+			<input type="submit" value="登录">
+		</form>
+	</div>
+</article>
+</body>
+</html>

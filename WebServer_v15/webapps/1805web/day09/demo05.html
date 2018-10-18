@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	/* 创建Person  属性有name和age  方法：  */
+	function Person(name,age){
+		//声明属性
+		this.name = name;
+		this.age = age;
+		//声明方法
+		this.run=function(){
+			alert("name="+this.name+" age="+this.age);
+		}
+	}
+	
+	//创建对象
+	var p = new Person("貂蝉",18);
+	p.run();
+	//声明空对象
+	function SuperMan(){
+		
+	}
+	//创建对象
+	var sman = new SuperMan();
+	//添加属性
+	sman.name="克拉克";
+	sman.age=18;
+	//添加方法
+	sman.fly = function(){
+		alert("我叫"+this.name+"今年"+this.age+"岁，我在飞");
+	}
+	//调用方法
+	sman.fly();
+	
+	/* 第二种声明对象的方式
+	以声明变量的形式创建对象*/
+	var p = {
+			"name":"吕布",
+			"age":25,
+			"run":function(){
+				alert("name"+this.name+" age="+this.age);
+			}
+	}
+	//调用对象方法
+	p.run();
+</script>
+<body>
+
+</body>
+</html>

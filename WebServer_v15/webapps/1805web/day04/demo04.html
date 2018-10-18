@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#big{
+		width: 200px;
+		height: 200px;
+		background-color: #5cbd3c;
+		/* 添加内边距 */
+		/* padding-top: 10px;
+		padding-left: 10px; */
+		padding-top: 30px;
+	}
+	#small{
+		width: 200px;
+		height: 200px;
+		background-color: blue;
+	}
+	span{
+		border: 1px solid green;
+	}
+	#s1{
+	/* 左右内边距生效 并且影响元素显示所占的宽度 */
+		padding-left: 20px;
+		padding-right: 10px;
+	/* 上下内边距生效 不影响元素所占高度 */
+		padding-top: 20px;
+		padding-bottom: 30px;
+	}
+	body{
+		border: 1px solid pink;
+	}
+</style>
+</head>
+<body>
+<span id="s1">span1</span><span>span2</span>
+<div id="big">
+	Hello
+</div>
+</body>
+</html>

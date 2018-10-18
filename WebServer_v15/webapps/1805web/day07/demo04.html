@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function fn(){
+		/* 得到页面中的输入框对象 */
+		var input = document.getElementById("myinput");
+		/* 弹出取用户输入内容 */
+		//alert(a);
+		console.log(input.value);
+		if(isNaN(input.value)){
+			input.value = "不是数字";
+		}else{
+			input.value = "是数字";
+		}
+	}
+	function fn1(){
+		var input = document.getElementById("myinput1");
+		/* 得到页面中的div */
+		var d = document.getElementById("mydiv");
+		if(isNaN(input.value)){
+			//input.value = "输入有误";
+			d.innerText = "输入有误";
+		}else{
+			//input.value = input.value*input.value;
+			d.innerText = input.value*input.value
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="myinput">
+	<input type="button" value="按钮1" onclick="fn();"><br>
+	<input type="text" id="myinput1">
+	<input type="button" value="按钮2" onclick="fn1()">
+	<div id=mydiv></div>
+</body>
+</html>

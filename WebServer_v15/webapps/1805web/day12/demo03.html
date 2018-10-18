@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("input").click(function(){
+			/* 创建元素 */
+			var $h1 = $("<h1>我是新元素</h1>");
+			//$("#big").append($h1);//最后面
+			//$("#big").prepend($h1);//最前面
+			/* 添加到二哥前面before */
+			//$("h1:contains('我是二哥')").before($h1);
+			/* 添加到二哥的后面after */
+			//$("h1:contains('我是二哥')").after($h1);
+			//删除元素
+			//$("#small").remove();
+			//$("h1").remove("#small");
+			$("h1").css("color","red");
+			$("h1:contains('大')").css({"background-color":"yellow","color":"green"});
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="button" value="按钮"> 
+	<div id="big">
+		<h1>我是大哥</h1>
+		<h1>我是二哥</h1>
+		<h1 id="small">我是三哥</h1>
+	</div>
+</body>
+</html>

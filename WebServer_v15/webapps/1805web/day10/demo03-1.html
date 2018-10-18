@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div,img{
+		width:200px;
+		height: 150px;
+	}
+	div{
+		/* 给图片做位置参考 */
+		position: relative;
+		overflow: hidden;
+	}
+	img{
+		position: absolute;
+	}
+	
+</style>
+<script type="text/javascript">
+	/* 页面加载完的时候初始化图片的位置 */
+	onload = function(){
+		var imgs = document.getElementsByTagName("img");
+		/* 遍历每张图片 */
+		for(var i=0;i<imgs.length;i++){
+			var img = imgs[i];
+			img.style.left = i*200+"px";
+		}
+	}
+	
+	
+	
+	function move(){
+		/* 开启移动图片的定时器 */
+		var moveId = setInterval(function(){
+			var imgs = document.getElementsByTagName("img");
+			for(var i=0;i<imgs.length;i++){
+				var img = imgs[i];
+				/* 得到之前的left值 -5 再放回去 */ 
+				var oldLeft = img.style.left;
+				/* 把字符串转成数值 */
+				oldLeft = parseInt(oldLeft);
+				oldLeft-=2;
+				/* 判断是否移出屏幕了 如果是 则把left改成800 */
+				if(oldLeft<=-200){
+					oldLeft=800;
+					/* 让移动的定时器停止 */
+					clearInterval(moveId);
+				}
+				/* 把计算完之后的值放回去 */
+				img.style.left = oldLeft+"px";
+			}
+		},10);
+	}
+	
+	var timeId;
+	/* 鼠标移出图片的时候 */
+	function start(){
+		/* 停掉之前的定时器  
+		避免连续开启多个定时器导致停不下来的bug*/
+		clearInterval(timeId);
+		/* 每隔3秒调用一次move 移动一张图片 */
+		timeId = setInterval(move,3000);
+	}
+	
+	
+	/* 鼠标移动到图片上面的时候 */
+	function stop(){
+		/* 让定时器停止 */
+		clearInterval(timeId);
+	}
+	/* 让页面刚开始显示的时候就开启换图片的定时器 */
+	start();
+	/* 页面失去焦点时 停止移动 */
+	onblur = function(){
+		stop();
+	}
+	/* 获得焦点时 继续移动图片 */
+	onfocus = function(){
+		start();
+	}
+	
+</script>
+</head>
+<body>
+<div onmouseover="stop()" onmouseout="start()">
+	<img src="../imgs/a.jpg">
+	<img src="../imgs/b.jpg">
+	<img src="../imgs/d.jpg">
+	<img src="../imgs/m.jpg">
+	<img src="../imgs/k.jpg">
+</div>
+</body>
+</html>

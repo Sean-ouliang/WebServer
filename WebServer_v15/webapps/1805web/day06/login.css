@@ -1,0 +1,165 @@
+@charset "UTF-8";
+
+body{
+		font-family: 微软雅黑, 文泉驿正黑, 黑体, serif;
+	    font-size: 12px;
+	    color: rgb(102, 102, 102);
+	    background-color: rgb(245, 245, 245);
+	    margin: 0px;
+}
+/* 头部内容 */
+header{
+		padding: 20px 50px 30px 50px;
+		overflow: hidden;/* 为了识别浮动后子元素的高度 */
+	}
+	header img,header h1{ 
+		float: left;
+	}
+	header h1{
+		margin: 10px 0 0 24px;
+		font-weight: normal;
+	}
+	
+/* 中间form表单相关内容 */
+	#form_div{
+		background-image: url('../images/regist.png');
+		width: 100%;
+		height: 560px;
+	}
+	#form_panel{
+		width: 264px;
+		padding: 8px;
+		background-color: rgba(0,0,0,0.3);
+		float: right;
+		margin: 120px 111px 0 0;
+		color: white;
+	}
+	#form_panel h2{
+		border-bottom: 1px solid white;
+		margin: 0 0 5px 0;
+		padding: 5px 8px;
+	}
+	#form_panel h2 a{
+		font-size: 15px;
+		color: white;
+		text-decoration: none;
+		font-weight: normal;
+		float: right;
+		margin-top: 5px;
+	}
+	.field input{
+		width: 224px;/* 264-20*2(内边距)  */
+		height: 15px;
+		border: 0;
+		padding: 10px 20px;
+	}
+	.field{
+		position: relative;/* 给图片做位置参考 */
+	}
+	.field img{
+		position: absolute;
+		top: 3px;
+		right: 20px;
+	}
+	.field div{
+		color: red;
+		padding: 6px 0;
+	}
+ 
+ 
+ 	#save_div a{
+		float: right;
+		color: white;
+		text-decoration: none;
+	}
+	#save_div label{
+		position: relative;
+		top: -3px;
+	}
+	
+	#form_panel>input{
+		width: 264px;
+		height: 35px;
+		border: 0;
+		color: white;
+		background-color: #27b0f6;
+		border-radius: 4px;
+	}
+/* 服务相关样式 */
+#service_div{
+	width: 1000px;
+	margin: 20px auto;
+	text-align: center;/*让图片和超链接居中  */
+	overflow: hidden;/* 为了识别高度 */
+}
+#service_div div{
+	float: left;
+	width: 250px;
+}
+#service_div div a{
+	display: block;
+	color: #666;
+	text-decoration: none;
+}
+
+/* 底部样式代码 */
+
+	footer{
+		padding:20px 0;
+		width: 1000px;
+		margin: 0 auto;
+		background-color: white;
+		overflow: hidden;
+	}
+	footer>div{
+		width: 333px;
+		float: left;
+		
+	}
+	#footer_left img{
+		margin-left: 30px;
+	}
+	#footer_center ul{
+		list-style-type: none;
+		padding: 0;/* 去掉默认的缩进效果 */
+	}
+	#footer_center>ul>li{
+		float: left;
+		font-weight: bold;
+		font-size: 14px;
+		width: 111px;
+		text-align: center;
+	}
+	#footer_center>ul>li>ul>li{
+		font-weight: normal;
+		font-size: 12px;
+		margin: 5px 0;
+	}
+	li a{
+		text-decoration: none;
+	}
+	#imgli{
+	 	position: relative;
+	 	left: -7px;
+	}
+	/* 底部右侧内容 */
+	#footer_right div{
+		width: 166px;/* 333/2 */
+		float: left;
+	}
+	#footer_right h3{
+		margin: 4px;
+	}
+	#footer_right {
+		text-align: center;
+	}
+	footer p{
+	/* 解决由于上面有浮动元素导致的显示异常 */
+		clear:both;
+		text-align: center;
+	}
+
+
+
+	
+	

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 2.通过script标题添加js代码 可以写在任意位置 -->
+<!-- <script type="text/javascript">
+	alert("第二种引入方式");
+</script> -->
+<!-- 3.通过单独的*.js文件写js代码 以下方式引入  引入文件后不能再当前script标签体内写js代码 -->
+<script src="first.js">
+	//这个位置不能再写js代码
+</script>
+</head>
+<body>
+	<!-- 1.在元素的事件中添加js代码 -->
+	<input type="button" value="点我试试" onclick="alert('第一种引入方式成功！')">
+</body>
+</html>

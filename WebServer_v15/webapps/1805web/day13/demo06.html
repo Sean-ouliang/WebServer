@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		width: 200px;
+		height: 200px;
+		border: 1px solid red;
+	}
+</style>
+<script src="../js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//给按钮绑定事件
+		$("input").click(function(){
+			alert("试试就试试");
+		});
+		
+		/* setInterval(function(){
+			//模拟事件
+			$("input").trigger("click");
+		},3000); */
+		$("div").hover(function(){
+			$("div").css("color","red");
+		},function(){
+			$("div").css("color","green");
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="button" value="点我试试">
+	<div>我是div我怕谁！</div>
+</body>
+</html>

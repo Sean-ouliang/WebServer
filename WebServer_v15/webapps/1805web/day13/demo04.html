@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.4.2.min.js"></script>
+<script>
+	function addfn(){
+		var name = $("input:eq[0]").val();
+		var age = $("input:eq[1]").val();
+		var sal = $("input:eq[2]").val();
+		/* 创建tr和td */
+		var nametd = $("<td>"+name+"</td>");
+		var agetd = $("<td>"+age+"</td>");
+		var saltd = $("<td>"+sal+"</td>");
+		var deltd = $("<td></td>");
+		var delbtn = $("<input type='button' value='删除'>");
+		delbtn.click(function(){
+			/* 当点击删除时做的事儿 */
+			$(this).parent().parent().remove();
+		});
+		deltd.append(delbtn);
+		var tr = $("<tr></tr>");
+		tr.append(nametd);
+		tr.append(agetd);
+		tr.append(saltd);
+		tr.append(deltd);
+		/* 把tr添加到table里面 */
+		$("table").append(tr);
+	}
+</script>
+</head>
+<body>
+	<input type="text" placeholder="姓名">
+	<input type="text" placeholder="年龄">
+	<input type="text" placeholder="工资">
+	<input type="button" value="添加" onclick="addfn();">
+	<hr>
+	<table border="1" cellspacing="0">
+		<tr>
+			<th>姓名</th>
+			<th>年龄</th>
+			<th>工资</th>
+			<th>操作</th>
+		</tr>
+	</table>
+</body>
+</html>

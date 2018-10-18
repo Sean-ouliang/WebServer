@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#big{
+		text-align: center;
+		width: 333px;
+		height: 430px;
+		border: 5px solid #ccc;
+		border-radius: 5px;
+		margin: 20px auto;
+	}
+	#big>div input{
+		width: 70px;
+		height: 70px;
+		font-size: 30px;
+		margin: 8px 3px;
+		border: 5px solid #ccc;
+		border-radius: 5px;
+		background-color: #eee;
+	}
+	#tr1{
+		overflow: hidden;
+	}
+	#tr1 p{
+		margin: 0;
+		margin-left: 10px;
+		margin-top: 8px;
+		border: 5px solid #ccc;
+		border-radius: 5px;
+		width: 217px;
+		height: 60px;
+		float: left;
+		line-height: 60px;
+		text-align: left;
+		padding-left: 5px;
+		font-size: 30px;
+	}
+	#big>#tr1>input{
+		float: right;
+		margin-right: 11px;
+	}
+</style>
+<script type="text/javascript">
+	function fn(){
+		/* 得到事件源 */
+		var obj = event.target||event.srcElement;
+		/* 判断是否点击了按钮 */
+		if(obj.nodeName=="INPUT"){
+			//得到按钮显示的内容
+			var x = obj.value;
+			var p = document.getElementById("p");
+			if(x=="c"){
+				p.innerText = "";
+			}else if(x=="="){
+				/*  把输入内容取出计算 */
+				p.innerText = eval(p.innerText);
+			}else{//数字和+-*/符号
+				p.innerText += x;
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="big" onclick="fn();">
+		<div id="tr1">
+			<p id="p"></p>
+			<input type="button" value="c">
+		</div>
+		<div id="tr2">
+			<input type="button" value="7">
+			<input type="button" value="8">
+			<input type="button" value="9">
+			<input type="button" value="/">
+		</div>
+		<div id="tr3">
+			<input type="button" value="4">
+			<input type="button" value="5">
+			<input type="button" value="6">
+			<input type="button" value="*">
+		</div>
+		<div id="tr4">
+			<input type="button" value="1">
+			<input type="button" value="2">
+			<input type="button" value="3">
+			<input type="button" value="-">
+		</div>
+		<div id="tr5">
+			<input type="button" value="0">
+			<input type="button" value=".">
+			<input type="button" value="=">
+			<input type="button" value="+">
+		</div>
+	</div>
+</body>
+</html>

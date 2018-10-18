@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.class1 span{
+		background-color: green;
+	}
+	p span{
+		color: red;
+	}
+	.class1>span,.class2{
+		color: blue;
+	}
+	#d1>span{
+		color: yellow;
+	}
+	#d2,.class2{
+		border: 1px solid pink;
+	}
+</style>
+</head>
+<body>
+	<div id="d1">
+		<div class="class1">
+			<span>s1</span>
+			<span>s2</span>
+			<p>
+				<span>s3</span>
+			</p>
+		</div>
+		<div class="class2">
+			<span>s4</span>
+		</div>
+		<span>s5</span>
+	</div>
+	<div id="d2">
+		<span>d2下的span</span>
+	</div>
+</body>
+</html>

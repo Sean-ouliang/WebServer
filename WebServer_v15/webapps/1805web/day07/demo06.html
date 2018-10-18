@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function jia(){
+		var ip1 = document.getElementById("input1");
+		var ip2 = document.getElementById("input2");
+		var n1 = ip1.value;
+		var n2 = ip2.value;
+		/* 得到显示结果的div */
+		var resultDiv = document.getElementById("resultdiv");
+		/* 判断输入内容是否为数字 */
+		if(isNaN(n1)||isNaN(n2)){
+			resultDiv.innerText="输入有误";
+		}else{//输入的是数字
+			resultDiv.innerText=parseFloat(n1)+parseFloat(n2);
+		}
+	}
+	function fn(x){
+		var ip1 = document.getElementById("input1");
+		var ip2 = document.getElementById("input2");
+		var n1 = ip1.value;
+		var n2 = ip2.value;
+		/* 得到显示结果的div */
+		var resultDiv = document.getElementById("resultdiv");
+		/* 判断输入内容是否为数字 */
+		if(isNaN(n1)||isNaN(n2)){
+			resultDiv.innerText="输入有误";
+		}else{//输入的是数字
+			var result = 0;
+			switch(x){
+			case 1:
+				result=parseFloat(n1)+parseFloat(n2);
+				break;
+			case 2:
+				result=parseFloat(n1)-parseFloat(n2);
+				break;
+			case 3:
+				result=parseFloat(n1)*parseFloat(n2);
+				break;
+			case 4:
+				result=parseFloat(n1)/parseFloat(n2);
+				break;
+			}
+			resultDiv.innerText = result;
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="input1">
+	<!-- parseFloat(x.value)把字符串转数值 -->
+	<input type="button" value="加" onclick="fn(1);">
+	<input type="button" value="减" onclick="fn(2);">
+	<input type="button" value="乘" onclick="fn(3);">
+	<input type="button" value="除" onclick="fn(4);">
+	<input type="text" id="input2">
+	<div id="resultdiv"></div>
+</body>
+</html>

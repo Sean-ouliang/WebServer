@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- usemap:使用地图 #代表当前页面 -->
+<img alt="" src="../imgs/1.jpg" usemap="#mymap">
+<!-- 为了保证兼容性问题 把name和id都写上 -->
+<map name="mymap">
+	<!-- area区域  shape形状  rect矩形  coords坐标 -->
+	<area shape="rect" coords="0,0,200,200" href="../imgs/2.gif">
+</map>
+<img alt="" src="../../images/3.jpg" usemap="#3map">
+<map name="3map">
+	<area shape="rect" coords="0,0,120,120" href="http://www.tmooc.cn">
+</map>
+<img alt="" src="../imgs/b.jpg" usemap="#bmap">
+<map name="bmap">
+	<area shape="circle" coords="665,470,80" href="../imgs/a.jpg">
+	<area shape="circle" coords="880,745,80" href="../imgs/a.jpg">
+</map>
+</body>
+</html>

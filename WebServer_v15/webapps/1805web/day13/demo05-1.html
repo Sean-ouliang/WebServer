@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" 
+src="../js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+
+	function addfn(btn){
+		//通过按钮找到上级元素td然后得到td的所有兄弟td
+		//取出第一个和第二个里面的文本内容
+		var name = $(btn).parent().siblings().eq(0).text();
+		var price = $(btn).parent().siblings().eq(1).text();
+		//alert(name+price);
+		/* 创建5个td 前两个是添加name和price
+		第三个里面添加两个按钮中间一个span span里面显示1
+		第四个里面添加的是price 第五个里面添加一个删除按钮 */
+		var nametd = $("<td>"+name+"</td>"); 
+		var pricetd = $("<td>"+price+"</td>"); 
+		var counttd = $("<td><input type='button' "
+				+"value='-' onclick='countfn(-1)'>"
+				+"<span>1</span>"
+				+"<input type='button' "
+				+"value='+' onclick='countfn(1)'></td>");
+		var totaltd = $("<td>"+price+"</td>");
+		var deltd = $("<td></td>");
+		var delbtn = $("<input type='button' value='删除'>");
+		delbtn.click(function(){
+			//删除代码
+			$(this).parent().parent().remove();
+			cal();
+		});
+		deltd.append(delbtn);
+		var tr = $("<tr></tr>");
+		tr.append(nametd);
+		tr.append(pricetd);
+		tr.append(counttd);
+		tr.append(totaltd);
+		tr.append(deltd);
+		/* 添加到总计的上面 */
+		$("#total").before(tr);
+		cal();
+	}
+
+	/* 数量+-的函数 */
+	function countfn(num){
+		/* 得到原来的数值 */
+		var obj = event.target||event.srcElement;
+		//通过按钮 得到span的兄弟元素 取出里面的文本
+		var oldCount = $(obj).siblings("span").text();
+		//把原来的数值和传递进来的数值相加得到新的数值
+		var newCount = parseInt(oldCount)+num;
+		//数量不能为0 所以等于0 时结束方法 
+		if(newCount==0){
+			return;
+		}
+		//把新的数值放回去
+		$(obj).siblings("span").text(newCount); 
+		//通过按钮得到上级td 通过td得到哥哥单价td
+		var price = $(obj).parent().prev().text();
+		var total = price*newCount;
+		/* 把总价添加到总价td里 */
+		$(obj).parent().next().text(total);
+		cal();
+	}
+	
+	function cal(){
+		var total = 0;
+		//得到第二个table里面所有的tr并遍历
+		$("table:eq(1) tr").each(function(){
+			//通过tr得到里面第四个td
+			//遍历时this代表当前遍历的内容tr
+			var money = $(this).children().eq(3).text();
+			money = parseInt(money);
+			//把NaN过滤掉
+			if(!isNaN(money)){
+				total+=money;
+			}
+		});
+		/* 得到总计td并赋值 */
+		$("#total td").text("总计："+total+"元");
+	}
+</script>
+<style type="text/css">
+	body{
+		text-align: center;/* 页面所有文本居中对齐 */
+	}
+	table{
+		width: 90%;
+		margin: 0 auto;
+		/* 让边框和单元格边框合并 
+		等效于table属性cellspacing=0*/
+		border-collapse:collapse;
+		border: 1px solid red;
+	}
+	td,th{
+		border:1px solid red;
+	}
+	#total{
+		text-align: right;
+	}
+</style>
+</head>
+<body>
+<table>
+	<caption>特价商品</caption>
+	<tr>
+		<th>商品名称</th><th>单价</th><th>库存</th>
+		<th>商品介绍</th><th>操作</th>
+	</tr>
+	<tr>
+	<td>蟑螂药</td><td>15</td><td>100</td>
+	<td>专治各种蟑螂</td>
+	<td><input type="button" value="购物车" 
+		onclick="addfn(this)"></td>
+	</tr>
+	<tr>
+	<td>苹果</td><td>5</td><td>1000</td>
+	<td>富士苹果</td>
+	<td><input type="button" value="购物车" 
+		onclick="addfn(this)"></td>
+	</tr>
+	<tr>
+	<td>达内学习卡</td><td>1888</td><td>500</td>
+	<td>助你赢取白富美</td>
+	<td><input type="button" value="购物车" 
+		onclick="addfn(this)"></td>
+	</tr>
+</table>
+<hr>
+<table>
+	<caption>购物车</caption>
+	<tr>
+		<th>名称</th>
+		<th>单价</th>
+		<th>数量</th>
+		<th>总价</th>
+		<th>操作</th>
+	</tr>
+	<tr id="total">
+		<td colspan="5">总计：0元</td>
+	</tr>
+</table>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.4.2.min.js"></script>
+<script>
+	$(function(){
+		/* 隐藏全部 */
+		$(".title>ul").hide();
+		/* 给所有的class为title的绑定点击事件 */
+		$(".title").click(function(){
+			//$(this).children().toggle();
+			/* 事件触发时 判断点击的元素里面的ul是显示还是隐藏 */
+			if($(this).children().css("display")=="none"){
+				$(".title>ul").hide();
+				$(this).children().show();
+			}else{
+				$(this).children().hide();
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<ul>
+	<li class="title">美女好友
+		<ul>
+			<li>貂蝉</li>
+			<li>西施</li>
+			<li>白骨精</li>
+		</ul>
+	</li>
+	<li class="title">亲朋好友
+		<ul>
+			<li>习大大</li>
+			<li>老干妈</li>
+			<li>凤姐</li>
+		</ul>
+	</li>
+	<li class="title">IT好友
+		<ul>
+			<li>马云</li>
+			<li>马化腾</li>
+			<li>韩总</li>
+		</ul>
+	</li>
+</ul>
+</body>
+</html>

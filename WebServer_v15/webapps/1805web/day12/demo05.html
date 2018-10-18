@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+	function add(){
+		/* 创建元素 */
+		//var $li = $("<li></li>");
+		/* 设置内容为文本框value值 */
+		//$li.text($("#myinput").val());
+		/* 添加到ul中 */
+		//$("ul").append($li);
+		$("ul").append($("<li>"+$("#myinput").val()+"</li>"));
+	}
+	function insert(){
+		$("#sh").before($("<li>"+$("#myinput").val()+"</li>"));
+	}
+	function del(){
+		$("#sh").remove();
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="myinput">
+	<input type="button" value="添加" onclick="add();">
+	<input type="button" value="插入" onclick="insert();">
+	<input type="button" value="删除" onclick="del();">
+	<hr>
+	<ul>
+		<li>北京</li>
+		<li id="sh">上海</li>
+		<li>广州</li>
+	</ul>
+</body>
+</html>

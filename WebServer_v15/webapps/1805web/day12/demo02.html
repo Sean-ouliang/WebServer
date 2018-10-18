@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.4.2.min.js"></script>
+<script>
+	function jstojq(){
+		/* 得到js对象 */
+		var input = document.getElementById("myinput");
+		/* 把js对象转换成jQuery对象 */
+		/* $是jQuery单词的缩写 $=jQuery */
+		var $jq = $(input);
+		/* 弹出文本框的value值 */
+		alert($jq.val());
+	}
+	function jqtojs(){
+		/* 得到jq对象 */
+		var $jq = $("#myinput");
+		/* 把jq转成js对象 */
+		//第一种
+		var js1 = $jq[0];
+		//第二种
+		var js2 = $jq.get(0);
+		alert(js1.value+"="+js2.value);
+	}
+	$(function(){
+		var btn = document.getElementBtId("mybtn");
+		
+		/* var $btn = $("#mybtn");
+		$btn.click(function(){
+			alert("动态绑定成功!");
+		}); */
+		$("#mybtn").click(function(){
+			alert("动态绑定成功!");
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="text" id="myinput">
+	<input type="button" value="js转jq" onclick="jstojq();">
+	<input type="button" value="jq转js" onclick="jqtojs();">
+	<input id="mybtn" type="button" value="动态绑定事件">
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.4.2.min.js"></script>
+<script>
+	//onload = function(){}
+	$(function(){
+		alert("jq 导入成功！");
+	});
+	
+	function fn(){
+		//通过jq的选择器获得jq元素对象
+		//此时得到的是一个jQuery对象和上面的js对象不一样
+		var obj = $("#myinput");
+		alert(obj.val());
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="myinput">
+	<input type="button" value="点我试试" onclick="fn()">
+</body>
+</html>

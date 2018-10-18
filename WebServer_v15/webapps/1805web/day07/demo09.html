@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function f(){
+		var row = document.getElementById("row").value;
+		var col = document.getElementById("col").value;
+		var tab = document.getElementById("big");
+		var table = document.createElement("table");
+		table.setAttribute("border","1");
+		table.setAttribute("cellspacing","0");
+		for(var i=1;i<=row;i++){
+			var tr = document.createElement("tr");
+			for(var j=1;j<=col;j++){
+				var td = document.createElement("td");
+				tr.appendChild(td);
+				td.innerHTML = i+"-"+j;
+			}
+			table.appendChild(tr);
+		}
+		tab.appendChild(table);
+	}
+</script>
+</head>
+<body>
+	<input type="text" placeholder="请输入行数" id="row">
+	<input type="text" placeholder="请输入列数" id="col">
+	<input type="button" value="生成表格" onclick="f();">
+	<div id="big"></div>
+</body>
+</html>

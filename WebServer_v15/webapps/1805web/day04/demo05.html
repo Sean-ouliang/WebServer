@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#s2{
+		width: 100px;
+		height: 200px;
+		margin-left: 10px;
+		margin-right: 30px;
+		border: 5px solid red;
+		padding: 0 2px 0 8px;
+	}
+	#d1{
+		width: 200px;
+		height: 100px;
+		border: 1px solid red;
+		/* 文本相关属性 */
+		/* 文本水平对齐方式 center/left/right */
+		text-align: center;
+		/* 文本修饰 none没有
+		underline 下划线
+		overline 上划线
+		line-through 删除线*/
+		text-decoration: line-through;
+		/* 文本颜色 */
+		color: red;
+		/* 行高 通过让文本垂直居中的时候使用行高 */
+		line-height: 100px;
+		/* 文本阴影  4个参数 
+		1.阴影的颜色
+		2和3是阴影的偏移值
+		4.阴影的模糊度  值越小越清晰  0是不模糊*/
+		text-shadow: #0f0 5px 5px 1px;
+	}
+</style>
+</head>
+<body>
+<div id="d1">儿子，儿子</div>
+<span>span1</span><span id="s2">span2</span><span>span3</span>
+</body>
+</html>

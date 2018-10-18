@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.ok{
+		visibility: hidden;
+	}
+	.err{
+		visibility: visible;
+	}
+</style>
+<script>
+	function check(){
+		nameReg();
+		pwdReg();
+	}
+	function nameReg(){
+		var name = document.getElementById("name").value;
+		var span1 = document.getElementById("span1");
+		var reg1 = /^\w{6,10}$/;
+		var nameflag = reg1.test(name);
+		span1.className=nameflag?"ok":"err";
+		if(nameflag){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	function pwdReg(){
+		var password = document.getElementById("password").value;
+		var span2 = document.getElementById("span2");
+		var reg2 = /^\w{10,16}$/;
+		var passwordflag = reg2.test(password);
+		span2.className=passwordflag?"ok":"err";
+		if(passwordflag){
+			return true;
+		}else{
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+<form action="http://tmooc.cn" onsubmit="return nameReg()+pwdReg()==2">	
+	<input type="text" id="name" placeholder="用户名" onblur="nameReg();" name="username">
+	<span id="span1" class="ok">格式不正确</span><br>
+	<input type="text" id="password" placeholder="密码" onblur="pwdReg();" name="password">
+	<span id="span2" class="ok">格式不正确</span><br>
+	<!-- <input type="button" value="校验" onclick="check();"> -->
+	<input type="submit" value="登录">
+</form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function add(){
+		//得到用户输入的行数和列数
+		var ip1 = document.getElementById("row");
+		var ip2 = document.getElementById("col");
+		var row = ip1.value;
+		var col = ip2.value;
+		//得到大的div
+		var d = document.getElementById("big");
+		var str = "";
+		//遍历行
+		for(var i=0;i<row;i++){
+			str += "<div class='row'>";
+			//遍历列
+			for(var j=0;j<col;j++){
+				str += "<div class='col'></div>";
+			}
+			str += "</div>";
+		}
+		//把str内容添加到大的div中
+		d.innerHTML = str;
+	}
+</script>
+<style>
+	.row{/* 解决所有子元素浮动后 高度为0的问题 */
+		overflow: hidden;
+	}
+	.col{
+		width: 50px;
+		height: 50px;
+		background-color: red;
+		margin: 5px;
+		float: left;
+	}
+</style>
+</head>
+<body>
+	<input type="text" id="row">
+	<input type="text" id="col">
+	<input type="button" value="添加" onclick="add();">
+	<div id="big"></div>
+</body>
+</html>

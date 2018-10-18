@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function f(a){
+		var input1 = document.getElementById("d1");
+		var input2 = document.getElementById("d2");
+		var sum = document.getElementById("d3");
+		if(isNaN(input1.value) || isNaN(input2.value)){
+			sum.innerText = "输入有误";
+		}else if(a==1){
+			sum.innerText = parseFloat(input1.value)+parseFloat(input2.value);
+		}else if(a==2){
+			sum.innerText = input1.value-input2.value;
+		}else if(a==3){
+			sum.innerText = input1.value*input2.value;
+		}else{
+			sum.innerText = input1.value/input2.value;
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="d1">
+	<input type="button" value="加" onclick="f(1);">
+	<input type="button" value="减" onclick="f(2);">
+	<input type="button" value="乘" onclick="f(3);">
+	<input type="button" value="除" onclick="f(4);">
+	<input type="text" id="d2"><br>
+	<div id="d3"></div>
+</body>
+</html>

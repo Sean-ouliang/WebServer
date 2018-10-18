@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	onload = function(){
+		closeAll();
+	}
+	function closeAll(){
+		/* 得到所有的title li */
+		var titles = document.getElementsByClassName("title");
+		/* 遍历每一个 */
+		for(var i=0;i<titles.length;i++){
+			var title = titles[i];
+			/* 获取title里面的ul */
+			var ul = title.getElementsByTagName("ul")[0];
+			/* 隐藏ul 脱离文档流的隐藏 */
+			ul.style.display="none";
+		}
+	}
+	function myfn(){
+		/* 得到事件源 */
+		var obj = event.target||event.srcElement;
+		/* 判断点击的是不是分组标题 */
+		if(obj.className=="title"){
+			var ul = obj.getElementsByTagName("ul")[0];
+			/* 判断此时的ul是显示还是隐藏 */
+			if(ul.style.display=='none'){//隐藏
+				/* 隐藏所有 */
+				closeAll();
+				ul.style.display="block";
+			}else{//显示
+				ul.style.display="none";
+			}
+		}
+	}
+</script>
+</head>
+<body>
+<ul onclick="myfn();">
+	<li class="title">美女好友
+		<ul>
+			<li>貂蝉</li>
+			<li>西施</li>
+			<li>白骨精</li>
+		</ul>
+	</li>
+	<li class="title">亲朋好友
+		<ul>
+			<li>习大大</li>
+			<li>老干妈</li>
+			<li>凤姐</li>
+		</ul>
+	</li>
+	<li class="title">IT好友
+		<ul>
+			<li>马云</li>
+			<li>马化腾</li>
+			<li>韩总</li>
+		</ul>
+	</li>
+</ul>
+</body>
+</html>

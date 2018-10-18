@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function f(){
+		var input = document.getElementById("input").value;
+		var reg = /^http/;
+		if(reg.test(input)){
+			location.href = input;
+		}else{
+			location.href = "http://"+input;
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="input" placeholder="请输入网址">
+	<input type="button" value="跳转" onclick="f();">
+</body>
+</html>

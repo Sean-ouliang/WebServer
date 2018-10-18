@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body{
+		font-family: 微软雅黑, 文泉驿正黑, 黑体, serif;
+	    font-size: 12px;
+	    color: rgb(102, 102, 102);
+	    background-color: rgb(245, 245, 245);
+	    margin: 0px;
+	}
+	footer{
+		padding:20px 0;
+		width: 1000px;
+		margin: 0 auto;
+		background-color: white;
+		overflow: hidden;
+	}
+	footer>div{
+		width: 333px;
+		float: left;
+		
+	}
+	#footer_left img{
+		margin-left: 30px;
+	}
+	#footer_center ul{
+		list-style-type: none;
+		padding: 0;/* 去掉默认的缩进效果 */
+	}
+	#footer_center>ul>li{
+		float: left;
+		font-weight: bold;
+		font-size: 14px;
+		width: 111px;
+		text-align: center;
+	}
+	#footer_center>ul>li>ul>li{
+		font-weight: normal;
+		font-size: 12px;
+		margin: 5px 0;
+	}
+	li a{
+		text-decoration: none;
+	}
+	#imgli{
+	 	position: relative;
+	 	left: -7px;
+	}
+	/* 底部右侧内容 */
+	#footer_right div{
+		width: 166px;/* 333/2 */
+		float: left;
+	}
+	#footer_right h3{
+		margin: 4px;
+	}
+	#footer_right {
+		text-align: center;
+	}
+	footer p{
+	/* 解决由于上面有浮动元素导致的显示异常 */
+		clear:both;
+		text-align: center;
+	}
+	
+</style>
+</head>
+<body>
+<footer>
+	<div id="footer_left">
+		<img alt="" src="../images/footer/logo.png">
+		<img alt="" src="../images/footer/footerFont.png">
+	</div>
+	
+	<div id="footer_center">
+		<ul>
+			<li>买家帮助
+				<ul>
+					<li>新手指南</li>
+					<li>服务保障</li>
+					<li>常见问题</li>
+				</ul>
+			</li>
+			<li>商家帮助
+				<ul>
+					<li>商家入驻</li>
+					<li>商家后台</li>
+				</ul>
+			</li>
+			<li>关于我们
+				<ul>
+					<li>关于达内</li>
+					<li>联系我们</li>
+					<li id="imgli"><a href="#">
+						<img src="../images/footer/sinablog.png">
+					</a>
+					<a href="#">
+						<img src="../images/footer/wechat.png">
+					</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div id="footer_right">
+		<div>
+			<h3>学子商城客户端</h3>
+			<img src="../images/footer/android.png">
+			<img src="../images/footer/ios.png">
+		</div>
+		<div>
+			<img src="../images/footer/erweima.png">
+		</div>
+	</div>
+	<p>© 2017 达内集团有限公司 版权所有 京ICP证xxxxxxxxxxx</p>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

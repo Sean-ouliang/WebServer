@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#d1{
+		border-bottom: 5px inset purple;
+		border-top: 5px inset pink;
+		border-left: 5px inset green;
+		border-right: 5px inset black;
+		border-radius: 55px;/* 圆角 值越大越圆 */
+		width: 100px;
+		height: 100px;
+		background-color: red;
+		margin-bottom: 20px;
+	}
+	#d2{
+		width: 100px;
+		height: 100px;
+		background-color: blue;
+		margin-top: 30px;
+	}
+	#s1{
+		background-color: pink;
+		margin-right: 10px;
+	}
+	#s2{
+		background-color: green;
+		margin-left: 30px;
+	}
+	/* 结论：上下外边距取最大值，左右外边距相加 */
+</style>
+</head>
+<body>
+<span id="s1">span1</span><span id="s2">span2</span>
+<div id="d1"></div>
+<div id="d2"></div>
+</body>
+</html>

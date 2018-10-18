@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{
+		margin: 0;
+		background-image: url(../zombimgs/bg.jpg);
+		background-repeat: no-repeat;
+		border: 1px solid red;
+		overflow: hidden;
+	}
+	img{
+		position: absolute;
+		width: 80px;
+		height: 90px;
+	}
+	#successh3{
+		float: left;
+	}
+	#failh3{
+		float: right;
+	}
+</style>
+<script>
+	/* 用于记录成功和失败的次数 */
+	var successCount = 0;
+	var failCount = 0;
+	
+	onload = function(){
+		changBgSize();
+	}
+	/* 窗口尺寸改变的事件*/
+	onresize = function(){
+		changBgSize();
+	}
+	function changBgSize(){
+		/* 得到窗口的宽高 */
+		var w = document.body.clientWidth;
+		var h = document.body.parentElement.clientHeight;
+		/* 把得到的窗口宽高给到body的背景图片 */
+		document.body.style.backgroundSize = w+"px "+h+"px"; 
+	}
+	/* 开启添加僵尸的定时器 */
+	setInterval(function(){
+		var img = document.createElement("img");
+		img.src = "../zombimgs/zomb0.png";
+		/* 得到窗口的宽高 */
+		var w = document.body.clientWidth;
+		var h = document.body.parentElement.clientHeight - 90;
+		img.style.left = w+"px";
+		img.style.top = parseInt(Math.random()*h)+"px";
+		/* 给图片动态绑定事件 */
+		img.onmouseover = function(){
+			/* 删除图片元素 */
+			/* 动态绑定的事件中this代表绑定事件的元素 */
+			document.body.removeChild(this);
+			/* 成功次数+1 */
+			successCount++;
+			successh3.innerText = "成功次数："+successCount;
+		}
+		/* 添加到页面中 */
+		document.body.appendChild(img);
+	},500);
+	/* 开启移动僵尸的定时器 */
+	setInterval(function(){
+		/* 1.得到所有图片元素 */
+		var imgs = document.getElementsByTagName("img");
+		/* 2.遍历每一个图片 */
+		for(var i=0;i<imgs.length;i++){
+			var img = imgs[i];
+			/* 3.得到图片原来的left值-=5再赋值回去 */			
+			var oldLeft = img.style.left;
+			oldLeft = parseInt(oldLeft);
+			oldLeft -= 3+parseInt(successCount/10);
+			img.style.left = oldLeft+"px";
+			/* 判断僵尸离开屏幕 */
+			if(oldLeft<=-80){
+				document.body.removeChild(img);
+				/* 失败次数+1 */
+				failCount++;
+				failh3.innerText = "失败次数："+failCount;
+			}
+		}
+	},10);
+</script>
+</head>
+<body>
+	<h3 id="successh3">成功次数：0</h3>
+	<h3 id="failh3"> 失败次数：0</h3>
+</body>
+</html>

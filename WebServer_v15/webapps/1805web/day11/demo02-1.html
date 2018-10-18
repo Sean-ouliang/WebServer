@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function calfn(){
+		/* 得到所有inputs */
+		var inputs = document.getElementsByTagName("input");
+		/* 记录总价格 */
+		var total = 0;
+		/* 遍历每一个input */
+		for(var i=0;i<inputs.length;i++){
+			var input = inputs[i];
+			/* 判断当前的input是否被选中 */
+			if(input.checked){
+				/* 得到选中的钱 */
+				var money = parseFloat(input.value);
+				/* 过滤掉全选的NaN 因为NaN转布尔值为false */
+				if(money){
+					console.log("money="+money);
+					/* 把所有选中的价格 累加到一起 */
+					total+=money;
+				}
+			}
+		}
+		/* 把总价显示到p标签中 */
+		p.innerText = "总价："+total+"元";
+	}
+	/* 全选函数 */
+	function checkallfn(obj){
+		//alert(obj.checked);
+		/* 得到所有的input 让其状态和obj一样 */
+		var inputs = document.getElementsByTagName("input");
+		for(var i=0;i<inputs.length;i++){
+			var input = inputs[i];
+			/* 让选中状态和全选的一致 */
+			input.checked=obj.checked;
+		}
+		/* 计算总价 */
+		calfn();
+	}
+</script>
+</head>
+<body>
+<h1>订单练习</h1>
+<input type="checkbox" onclick="calfn()" value="10">记事本10元<br>
+<input type="checkbox" onclick="calfn()" value="2000">手机2000元<br>
+<input type="checkbox" onclick="calfn()" value="2">橡皮2元<br>
+<input type="checkbox" onclick="calfn()" value="3000">电视机3000元<br>
+<hr>
+
+<!-- 在元素事件中添加this代表当前元素对象 -->
+<input type="checkbox" onclick="checkallfn(this)">全选
+<p id="p">总价：0元</p>
+</body>
+</html>
+
+
+
+
+

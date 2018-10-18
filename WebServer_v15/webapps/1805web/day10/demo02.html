@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div,img{
+		width: 200px;
+		height: 150px;
+		margin: 0 auto;
+	}
+	div{
+		overflow: hidden;/* 超出部分不显示 */
+	}
+</style>
+<script type="text/javascript">
+	var count = 0;
+	setInterval(function(){
+		count++;
+		//此变量取值范围是0-4
+		var visibleIndex = count%5;
+		//得到所有的图片
+		var imgs = document.getElementsByTagName("img");
+		//遍历每张图片
+		for(var i=0;i<imgs.length;i++){
+			//得到每张图片
+			var img = imgs[i];
+			if(i==visibleIndex){
+				img.style.display="block";
+			}else{
+				img.style.display="none";
+			}
+		}
+	},1000);
+</script>
+</head>
+<body>
+	<div> 
+		<img src="../imgs/a.jpg">
+		<img src="../imgs/b.jpg">
+		<img src="../imgs/d.jpg">
+		<img src="../imgs/m.jpg">
+		<img src="../imgs/k.jpg">
+	</div>
+</body>
+</html>

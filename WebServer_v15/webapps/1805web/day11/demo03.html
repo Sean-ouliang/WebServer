@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		width: 200px;
+		height: 200px;
+		background-color: green;
+	}
+</style>
+<script>
+	function downfn(){
+		var x = event.clientX;
+		var y = event.clientY;
+		console.log("鼠标按下"+"x="+x+" y="+y);
+	}
+	function upfn(){
+		console.log("鼠标松开");
+	}
+	function movefn(){
+		var x = event.clientX;
+		var y = event.clientY;
+		console.log("鼠标移动"+"x="+x+" y="+y);
+	}
+</script>
+</head>
+<body onmousedown="downfn();" onmouseup="upfn();" onmousemove="movefn();">
+	<div>我是div</div>
+</body>
+</html>

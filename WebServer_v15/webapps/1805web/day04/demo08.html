@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#big{
+		width: 1000px;
+		margin: 0 auto;
+	}
+	#leftsmall{
+		width: 611px;
+		height: 376px;
+		background-color: #e8e8e8;
+		background-image: url("../images/itemCat/study_computer_img1.png");
+		background-repeat: no-repeat;
+		background-size: 318px 319px;
+		background-position: 90% 80%;
+		overflow: hidden;/* 解决粘连问题 */
+		float: left;/* 浮动到左侧 */
+	}
+	#content{
+		margin: 68px 0 0 36px;
+	}
+	.p1{
+		font-size: 32px;
+		color: #333;
+		/* 把p标签默认的下外边距变小 */
+		margin-bottom: 12px;
+	}
+	.p2{
+		font-size: 12px;
+		color: #666;
+		margin-bottom: 24px;
+	}
+	.p3{
+		font-size: 24px;
+		color: #0aa1ed;
+		font-weight: bold;	
+	}
+	input{
+		background-color: #0aa1ed;
+		color: white;
+		width: 132px;
+		height: 40px;
+		font-size: 20px;
+		border: 0;
+		border-radius: 4px;
+	}
+	/* 给右侧内容添加样式 */
+	#rightsmall{
+		width: 375px;
+		height: 376px;
+		background-color: #e8e8e8;
+		background-image: url("../images/itemCat/study_computer_img2.png");
+		background-repeat: no-repeat;
+		background-position: 80% 90%;
+		background-size: 292px 232px;
+		overflow: hidden;/* 解决粘连问题 */
+		float: right;
+	}
+</style>
+</head>
+<body>
+<div id="big">
+	<div id="leftsmall">
+		<div id="content">
+			<p class="p1">灵越 燃7000系列</p>		
+			<p class="p2">酷睿双核i5处理器|256GB SSD| 8GB内存<br>英特尔HD显卡620含共享显卡内存</p>
+			<p class="p3">￥4999.00</p>
+			<p><input type="button" value="查看详情"></p>
+		</div>
+	</div>
+	<div id="rightsmall">
+		<div id="content">
+			<p class="p1">颜值 框不住</p>		
+			<p class="p2">酷睿双核i5处理器|256GB SSD| 8GB内存<br>英特尔HD显卡620含共享显卡内存</p>
+			<p class="p3">￥6888.00</p>
+			<p><input type="button" value="查看详情"></p>
+		</div>	
+	</div>
+</div>
+
+</body>
+</html>

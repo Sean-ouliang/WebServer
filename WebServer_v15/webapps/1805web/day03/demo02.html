@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#d1{
+		color: pink;
+	}
+	#d2{
+		color: red;
+	}
+	#d3{
+		background-color: yellow;
+	}
+	/*类选择器*/
+	.s1{
+		border:1px solid green;
+	}
+	/*属性选择器*/
+	input[type="text"]{
+		background-color: pink;
+	}
+	input[placeholder="密码"]{
+		background-color: yellow;
+	}
+</style>
+</head>
+<body>
+	<input type="text" placeholder="用户名">
+	<input type="password" placeholder="密码">
+	
+	<div id="d1">id等于d1</div>
+	<div class="s1" id="d2">id等于d2</div>
+	<div id="d3">id等于d3</div>
+	<span class="s1">span1</span>
+	<span class="s1">span2</span>
+	<span>span3</span>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var arr = [["石家庄","唐山","秦皇岛"],
+	           ["哈尔滨","佳木斯","齐齐哈尔"],
+	           ["青岛","烟台","济南"]];
+	function changefn(){
+		/* 每次选择新的省份的时候把之前的城市信息清空 */
+		s2.innerHTML="<option>请选择</option>";
+		var cities = arr[s1.value];
+		//遍历每一个城市名称
+		for(var i=0;i<cities.length;i++){
+			var city = cities[i];
+			/* 创建option元素 */
+			var opt = document.createElement("option");
+			opt.innerText=city;
+			/* 添加到第二个下拉选中 */
+			s2.appendChild(opt);
+		}
+	}
+</script>
+</head>
+<body>
+<select id="s1" onchange="changefn();">
+	<option value="-1">请选择</option>
+	<option value="0">河北</option>
+	<option value="1">黑龙江</option>
+	<option value="2">山东</option>
+</select>
+<select id="s2">
+	<option>请选择</option>
+</select>
+</body>
+</html>

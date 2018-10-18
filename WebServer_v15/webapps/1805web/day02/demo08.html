@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- action写提交的地址 method提交方式get/post
+name作为数据提交时的key对显示效果没有任何影响
+placeholder:占位文本   value:默认值
+maxlength:最大字符长度
+readonly:只读
+ -->
+<form action="#" method="get">
+	姓名:<input type="text" name="username" placeholder="名字" value="aaa" maxlength="8" readonly="readonly"><br>
+	密码:<input type="password" name="password" maxlength="16"><br>
+	<!-- checked选中 -->
+	性别:<input type="radio" name="gender" id="nan" value="nan"><label for="nan">男</label>
+		<input type="radio" name="gender" id="nv" value="nv" checked="checked"><label for="nv">女</label><br>
+	爱好:<input type="checkbox" name="hobby" value="lq" id="box1"><label for="box1">打篮球</label>
+		<input type="checkbox" name="hobby" value="dm" id="box2"><label for="box2">敲代码</label>
+		<input type="checkbox" name="hobby" value="wz" id="box3"><label for="box3">王者荣耀</label>
+		<input type="checkbox" name="hobby" value="pb" id="box4" checked="checked"><label for="box4">跑步</label><br>
+	生日:<input type="date" name="birthday"><br>
+	靓照:<input type="file" name="pic"><br>
+	所在城市:
+	<select name="location">
+		<option>请选在</option>
+		<option value="bj">北京</option>
+		<option value="gz">广州</option>
+		<option value="sh" selected="selected">上海</option>
+		<option value="cd">成都</option>
+	</select><br>
+	个人简介:<textarea rows="3" cols="30" name="intro">这家伙很懒.....</textarea><br>
+	<!-- 隐藏域 -->
+	<input type="hidden" name="userid" value="123456"><br>
+	<!-- 提交表单按钮 -->
+	<input type="submit" value="注册">
+	<!-- 重置按钮 点击事件为重置表单内容到初始状态 -->
+	<input type="reset" value="重置">
+	<!-- 自定义按钮 -->
+	<input type="button" value="按钮">
+</form>
+</body>
+</html>

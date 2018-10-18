@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>作业：添加表格</title>
+<script type="text/javascript">
+	function add(){
+		/* 得到输入的行和列 */
+		var ip1 = document.getElementById("row");
+		var ip2 = document.getElementById("col");
+		var row = ip1.value;
+		var col = ip2.value;
+		var d = document.getElementById("big");
+		/* 得到大的div */
+		d.innerHTML = "<table id='mytable'></table>";
+		/* 得到table元素的对象 */
+		var table = document.getElementById("mytable");
+		var str = "";
+		//遍历行
+		for(var i=0;i<row;i++){
+			str += "<tr>";
+			//遍历列
+			for(var j=0;j<col;j++){
+				str += "<td>"+i+"-"+j+"</td>";
+			}
+			str += "</tr>";
+		}
+		table.innerHTML = str;
+	}
+</script>
+<style type="text/css">
+	td{
+		width: 40px;
+		height: 20px;
+		background-color: red;
+	}
+</style>
+</head>
+<body>
+	<input type="text" id="row">
+	<input type="text" id="col">
+	<input type="button" value="添加" onclick="add();">
+	<div id="big"></div>
+</body>
+</html>

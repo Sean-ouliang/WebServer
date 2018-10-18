@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/* 窗口事件 */
+	/* onclick = function(){
+		//alert("点击了");
+		location.href="http://www.tmooc.cn";
+	} */
+	/* 页面加载完成时执行 */
+	onload = function(){
+		var input = document.getElementById("ip1");
+		input.value="abc";
+	}
+	onblur = function(){
+		console.log("失去焦点");
+	}
+	onfocus = function(){
+		console.log("得到焦点");
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="ip1">
+</body>
+</html>

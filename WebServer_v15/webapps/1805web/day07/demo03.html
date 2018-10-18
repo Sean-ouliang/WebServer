@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/* 函数声明 */
+	function run(name,age){
+		alert(name+age);
+		console.log(name,age);
+	}
+	/* 函数调用 */
+	run("小明",18);
+	
+	function fn1(x,y){
+		return x+y;
+	}
+	/* 调用有返回值的函数 */
+	var z = fn1(20,30);
+	alert(z);
+	
+	/* 声明一个被按钮点击时执行的函数 */
+	function fn2(){
+		alert("我是被按钮点击的函数");
+	}
+	
+	var fn3 = function(name,age){
+		alert(name+age);
+	}
+	/* 调用函数 */
+	fn3("张飞",25);
+</script>
+</head>
+<body>
+	<input type="button" value="按钮1" onclick="fn2();">
+</body>
+</html>
+
+
+
+
+
